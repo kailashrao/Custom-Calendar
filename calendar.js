@@ -1,15 +1,29 @@
- let year1 = 2024
- generateCalendar(year1)
+ let yearForm = document.getElementById("yearForm");
+ function getYear(eventObj) {
+    eventObj.preventDefault();
+    let year = document.getElementById("year-input");
+    year = Number(year.value);
+    if(isNaN(year))
+        document.getElementById("msg").innerHTML = "Please Enter Valid Year!"
+    else {
+        document.getElementById("msg").innerHTML = "Success"
+        generateCalendar(year)
+    }
+
+
+ }
+ yearForm.addEventListener("submit", getYear);
+ 
 
  function generateCalendar(year) {
     let allMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    isLeapYear(year1) ? daysInMonth[1] = 29 : daysInMonth[1] = 28;
+    isLeapYear(year) ? daysInMonth[1] = 29 : daysInMonth[1] = 28;
     
     for(let k = 0; k < allMonths.length; k++) {
 
-        let monthTable = "<caption>" + allMonths[k] + " " + year1 + "</caption>";
+        let monthTable = "<caption>" + allMonths[k] + " " + year + "</caption>";
 
         let daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         for(let i = 0; i < daysOfWeek.length; i++) {
@@ -19,7 +33,7 @@
         let rows = 6;
         let columns = 7;
 
-        let startDate = getFirstSunday(year1, allMonths[k]).getDate();
+        let startDate = getFirstSunday(year, allMonths[k]).getDate();
         let displayNum = startDate;
         let isPrevMonth = false;
         let endOfMonth = false;
