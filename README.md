@@ -137,3 +137,15 @@ We will be using HTML, CSS, and JS to develop this project.
 - User's Brand/Name
 - Number corresponding to month (1 == Jan)
 
+# Development Plan
+- The goal is to get a working product as soon as possible
+- The product will be very basic first (eg. only generic calendar)
+- Each new feature will be added on separate branches
+
+## Order of Features
+1. Generic Calendar viewable on webpage
+2. Printability of Generic Calendar
+3. Personalized Photos
+4. Personalized Messages
+5. Company Name + Logo
+6. Cover Page
