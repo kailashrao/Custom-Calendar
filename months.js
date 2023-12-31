@@ -1,5 +1,5 @@
-year = Number(sessionStorage.getItem("year"));
-month = Number(sessionStorage.getItem("month"));
+let year = Number(sessionStorage.getItem("year"));
+let month = Number(sessionStorage.getItem("month"));
 
 document.getElementById("home").addEventListener("click", goHome);
 document.getElementById("prev").addEventListener("click", prevMonth);
@@ -36,7 +36,7 @@ function generateCalendar(year, month) {
     for(let k = 0; k < allMonths.length; k++) {
 
         if(k == month) {
-            document.getElementById("title").innerHTML = allMonths[k];
+            document.getElementById("title").innerHTML = allMonths[k] + " " + year;
 
             let monthTable = "<caption>" + allMonths[k] + " " + year + "</caption>";
 
