@@ -58,7 +58,7 @@ We will be using HTML, CSS, and JS to develop this project.
 - Year 
 ### Output: 
 - Generic Calendar, viewable in 12 different pages
-- http://kailashrao.com/calendar/2024/1 --> index.html == January 2024
+- https://kailashrao.github.io/Custom-Calendar/months.html == January 2024
 - 1 Zip File containing 12 CDR files ready to print 
 - OR
 - 1 CDR file with 12 pages
@@ -77,7 +77,7 @@ We will be using HTML, CSS, and JS to develop this project.
 
 ### Output
 - Customized Calendar, viewable in 12 different pages
-- http://kailashrao.com/calendar/2024/1 --> index.html == January 2024
+- https://kailashrao.github.io/Custom-Calendar/months.html == January 2024
 - 1 Zip File containing 12 CDR files ready to print 
 - OR
 - 1 CDR file with 12 pages
@@ -119,19 +119,8 @@ We will be using HTML, CSS, and JS to develop this project.
 ```
 
 #### URL Breakdown
-    http://kailashrao.com/calendar/2024/taj-hotels/1  
-    http://kailashrao.com/calendar/2024/taj-hotels/2  
-    http://kailashrao.com/calendar/2024/taj-hotels/3  
-    http://kailashrao.com/calendar/2024/taj-hotels/4  
-    http://kailashrao.com/calendar/2024/taj-hotels/5  
-    http://kailashrao.com/calendar/2024/taj-hotels/6  
-    http://kailashrao.com/calendar/2024/taj-hotels/7  
-    http://kailashrao.com/calendar/2024/taj-hotels/8  
-    http://kailashrao.com/calendar/2024/taj-hotels/9  
-    http://kailashrao.com/calendar/2024/taj-hotels/10  
-    http://kailashrao.com/calendar/2024/taj-hotels/11  
-    http://kailashrao.com/calendar/2024/taj-hotels/12  
-    http://kailashrao.com/calendar/2024/taj-hotels/cover
+    https://kailashrao.github.io/Custom-Calendar/taj-hotels/months.html   
+    https://kailashrao.github.io/Custom-Calendar/taj-hotels/cover
 - Calendar project
 - Specified year
 - User's Brand/Name
