@@ -2,12 +2,20 @@ let year = Number(sessionStorage.getItem("year"));
 let month = Number(sessionStorage.getItem("month"));
 let weeklyHoliday = sessionStorage.getItem("weeklyHoliday");
 
-
 document.getElementById("home").addEventListener("click", goHome);
-document.getElementById("prev").addEventListener("click", prevMonth);
-document.getElementById("next").addEventListener("click", nextMonth);
 
-function goHome(eventObj) {
+if((window.location.pathname).includes("months.html")) {
+
+    document.getElementById("prev").addEventListener("click", prevMonth);
+    document.getElementById("next").addEventListener("click", nextMonth);
+
+    if (weeklyHoliday == null)
+        generateCalendar(year, month);
+    else
+        generateCalendar(year, month, weeklyHoliday);
+}
+
+function goHome() {
     window.location.href = "./index.html";
 }
 function prevMonth(eventObj) {
@@ -27,15 +35,9 @@ function nextMonth(eventObj) {
     location.reload();
 }
 
-if (weeklyHoliday == null)
-    generateCalendar(year, month);
-else
-    generateCalendar(year, month, weeklyHoliday);
-
-function generateCalendar(year, month, weeklyHoliday="Sun") {
+function generateCalendar(year, month, weeklyHoliday="Sun", target="monthTable") {
     let allMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    // let weeklyHoliday = "Sun"; 
     isLeapYear(year) ? daysInMonth[1] = 29 : daysInMonth[1] = 28;
     
     for(let k = 0; k < allMonths.length; k++) {
@@ -102,7 +104,7 @@ function generateCalendar(year, month, weeklyHoliday="Sun") {
                     break;
             }
 
-            document.getElementById("monthTable").innerHTML = monthTable;
+            document.getElementById(target).innerHTML = monthTable;
         }
     }
 }
@@ -115,7 +117,7 @@ function isLeapYear(year) {
 
     return leap;
 }
- function getFirstSunday(year, month) {
+function getFirstSunday(year, month) {
     let firstOfMonth = new Date("01-" + month + "-" + year);
     let sundayOffset = firstOfMonth.getDay();
 
