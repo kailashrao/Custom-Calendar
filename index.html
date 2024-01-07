@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Calendar</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Generic Calendar</h1>
+
+        <form id="yearForm">
+            <input id="year-input" type="text" placeholder="Year"> <br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <a id="holidayLink" style="font-size: smaller;" onclick="showHoliday()" href="#">Change Weekly Holdiay</a> <br>
+        
+        <div id="holidayContainer" style="display:none;">
+            <form id="holiday-form" onchange="storeHoliday()">
+                <label for="holiday-input">Weekly Holiday</label> 
+                <select id="holiday-input">
+                    <option value="none" selected disabled hidden>Select an Option</option>
+                    <option value="Sun">Sun</option>
+                    <option value="Mon">Mon</option>
+                    <option value="Tue">Tue</option>
+                    <option value="Wed">Wed</option>
+                    <option value="Thu">Thu</option>
+                    <option value="Fri">Fri</option>
+                    <option value="Sat">Sat</option>
+                </select> <br>
+            </form>
+        </div>
+
+        <p id="msg"></p> <br>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
