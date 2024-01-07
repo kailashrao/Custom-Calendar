@@ -1,5 +1,7 @@
 let year = Number(sessionStorage.getItem("year"));
 let month = Number(sessionStorage.getItem("month"));
+let weeklyHoliday = sessionStorage.getItem("weeklyHoliday");
+
 
 document.getElementById("home").addEventListener("click", goHome);
 document.getElementById("prev").addEventListener("click", prevMonth);
@@ -25,12 +27,15 @@ function nextMonth(eventObj) {
     location.reload();
 }
 
-generateCalendar(year, month);
+if (weeklyHoliday == null)
+    generateCalendar(year, month);
+else
+    generateCalendar(year, month, weeklyHoliday);
 
-function generateCalendar(year, month) {
+function generateCalendar(year, month, weeklyHoliday="Sun") {
     let allMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
+    // let weeklyHoliday = "Sun"; 
     isLeapYear(year) ? daysInMonth[1] = 29 : daysInMonth[1] = 28;
     
     for(let k = 0; k < allMonths.length; k++) {
@@ -41,8 +46,12 @@ function generateCalendar(year, month) {
             let monthTable = "<caption>" + allMonths[k] + " " + year + "</caption>";
 
             let daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            let pos1 = daysOfWeek.indexOf(weeklyHoliday);
             for(let i = 0; i < daysOfWeek.length; i++) {
-                monthTable += "<th>" + daysOfWeek[i] + "</th>";
+                if (i == pos1) 
+                    monthTable += "<th style='color:red;'>" + daysOfWeek[i] + "</th>";
+                else
+                    monthTable += "<th>" + daysOfWeek[i] + "</th>";
             }
 
             let rows = 6;
@@ -76,10 +85,13 @@ function generateCalendar(year, month) {
                         break; 
                     }
 
+                    
                     if(isPrevMonth)
                         monthTable += "<td>" + " " + "</td>";
+                    else if(i == pos1)
+                        monthTable += "<td style='color:red;'>" + displayNum + "</td>";
                     else
-                        monthTable += "<td>" + displayNum + "</td>";
+                    monthTable += "<td>" + displayNum + "</td>";
 
                     displayNum++;
                 }

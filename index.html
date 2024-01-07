@@ -15,8 +15,26 @@
             <input type="submit" value="Submit">
         </form>
 
+        <a id="holidayLink" style="font-size: smaller;" onclick="showHoliday()" href="#">Change Weekly Holdiay</a> <br>
+        
+        <div id="holidayContainer" style="display:none;">
+            <form id="holiday-form" onchange="storeHoliday()">
+                <label for="holiday-input">Weekly Holiday</label> 
+                <select id="holiday-input">
+                    <option value="none" selected disabled hidden>Select an Option</option>
+                    <option value="Sun">Sun</option>
+                    <option value="Mon">Mon</option>
+                    <option value="Tue">Tue</option>
+                    <option value="Wed">Wed</option>
+                    <option value="Thu">Thu</option>
+                    <option value="Fri">Fri</option>
+                    <option value="Sat">Sat</option>
+                </select> <br>
+            </form>
+        </div>
+
         <p id="msg"></p> <br>
     </div>
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
