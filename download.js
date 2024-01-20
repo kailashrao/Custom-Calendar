@@ -13,7 +13,7 @@ function displayCalendar(year, weeklyHoliday="sun") {
 
 function downloadPDF() {
     html2pdf().set({
-        filename: "calendar.pdf",
+        filename: year + "calendar.pdf",
         image: { type: 'jpeg', quality: 0.98 },
         margin: [50,0,0,0], 
         html2canvas: {scale:3},
