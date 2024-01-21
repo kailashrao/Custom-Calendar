@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="./styles.css" rel="stylesheet">
+    <title>Download Calendar</title>
+</head>
+<body>
+    <div class="container">
+        <button id="home" onclick="goHome()">Home</button>
+        <button id="download" onclick="downloadPDF()">Download</button> <br> <br>
+        <div id="pdfContent">
+            <table id="Jan"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Feb"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Mar"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Apr"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="May"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Jun"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Jul"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Aug"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Sep"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Oct"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Nov"></table> <br> <br>
+            <div class="html2pdf__page-break"></div>
+            <table id="Dec"></table> <br> <br>
+        </div>
+    </div>
+
+    <div id="title" style="display:none;"></div>
+    
+    <script src="months.js"></script>
+    <script src="download.js"></script>
+</body>
+</html>

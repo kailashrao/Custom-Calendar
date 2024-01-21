@@ -8,12 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <button id="home">Home</button> <br> <br>
+        <button id="home" onclick="goHome()">Home</button> <br> <br>
 
         <table id="monthTable"></table> <br> <br>
 
-        <button id="prev">Previous</button>
+        <button style="margin-left:13%" id="prev">Previous</button>
         <button id="next">Next</button>
+        <button id="download" style="float:right; margin-right: 10%;" onclick="window.location.replace('./download.html')">Download</button>
     </div>
     <script src="./months.js"></script>
 </body>
